@@ -5,6 +5,6 @@ public class TicTacToe {
 
 
     public String makeMark() {
-        return null;
+        return "X";
     }
 }
