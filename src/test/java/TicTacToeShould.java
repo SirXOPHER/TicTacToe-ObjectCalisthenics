@@ -46,4 +46,12 @@ public class TicTacToeShould {
         testGame.makeMark(0, 2);
         assertThat(testGame.checkRow(), is(true));
     }
+
+    @Test
+    public void validateWinningColumn() throws PositionAlreadyFilledException {
+        testGame.makeMark(0, 0);
+        testGame.makeMark(1, 0);
+        testGame.makeMark(2, 0);
+        assertThat(testGame.checkColumn(), is(true));
+    }
 }
