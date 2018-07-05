@@ -13,19 +13,20 @@ public class TicTacToe {
 
     public String makeMark(int row, int column) throws PositionAlreadyFilledException {
         String mark = currentPlayer;
+        toggleCurrentPlayer();
+        checkPosition(row, column);
+        grid[row][column] = mark;
+        return mark;
+    }
 
-        if (currentPlayer.equals("X")) {
-            currentPlayer = "O";
-        }
-        if (currentPlayer.equals("O")) {
-            currentPlayer = "X";
-        }
+    private void toggleCurrentPlayer() {
+        if (currentPlayer.equals("X")) currentPlayer = "O";
+        if (currentPlayer.equals("O")) currentPlayer = "X";
+    }
 
+    private void checkPosition(int row, int column) throws PositionAlreadyFilledException {
         if (grid[row][column] != null) {
             throw new PositionAlreadyFilledException();
         }
-        grid[row][column] = mark;
-
-        return mark;
     }
 }
