@@ -10,7 +10,13 @@ public class TicTacToe {
     }
 
     public String makeMark() {
-        currentPlayer = "O";
-        return "X";
+        String mark = currentPlayer;
+        if (currentPlayer.equals("X")) {
+            currentPlayer = "O";
+        }
+        if (currentPlayer.equals("O")) {
+            currentPlayer = "X";
+        }
+        return mark;
     }
 }

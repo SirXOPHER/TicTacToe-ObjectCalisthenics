@@ -24,6 +24,6 @@ public class TicTacToeShould {
     @Test
     public void alternateBetweenTwoPlayers() {
         testGame.makeMark();
-        assertThat(testGame.makeMark(), is("O"));
+        assertThat(testGame.makeMark(), is("X"));
     }
 }
