@@ -32,4 +32,9 @@ public class TicTacToeShould {
         testGame.makeMark(0, 0);
         testGame.makeMark(0, 0);
     }
+    
+    @Test
+    public void validateWinningTriplet() {
+        assertThat(testGame.checkTriplet("X", "X", "X"), is(true));
+    }
 }
