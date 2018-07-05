@@ -10,6 +10,6 @@ public class TicTacToeShould {
 
     @Test
     public void ensurePlayerXalwaysGoesFirst() {
-        assertThat(new TicTacToe().makeMark, is("X"));
+        assertThat(new TicTacToe().makeMark(), is("X"));
     }
 }
