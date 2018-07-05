@@ -30,6 +30,10 @@ public class TicTacToe {
         }
     }
 
+    public boolean checkTriplet(String first, String second, String third) {
+        return ((first != null) && (first == second) && (second == third));
+    }
+
     public void printGridToConsole() {
         System.out.println("-------------");
         for (int row = 0; row < 3; row++) {
