@@ -34,6 +34,13 @@ public class TicTacToe {
         return ((first != null) && (first == second) && (second == third));
     }
 
+    public boolean checkRow() {
+        for (int row = 0; row < 3; row++) {
+            if (checkTriplet(grid[row][0], grid[row][1], grid[row][2])) return true;
+        }
+        return false;
+    }
+
     public void printGridToConsole() {
         System.out.println("-------------");
         for (int row = 0; row < 3; row++) {

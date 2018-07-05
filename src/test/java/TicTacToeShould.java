@@ -40,7 +40,7 @@ public class TicTacToeShould {
     }
     
     @Test
-    public void validateWinningRow() {
+    public void validateWinningRow() throws PositionAlreadyFilledException {
         testGame.makeMark(0, 0);
         testGame.makeMark(0, 1);
         testGame.makeMark(0, 2);
