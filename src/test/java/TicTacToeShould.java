@@ -18,12 +18,18 @@ public class TicTacToeShould {
 
     @Test
     public void ensurePlayerXalwaysGoesFirst() {
-        assertThat(testGame.makeMark(), is("X"));
+        assertThat(testGame.makeMark(0, 0), is("X"));
     }
 
     @Test
     public void alternateBetweenTwoPlayers() {
-        testGame.makeMark();
-        assertThat(testGame.makeMark(), is("X"));
+        testGame.makeMark(0, 0);
+        assertThat(testGame.makeMark(0, 0), is("X"));
+    }
+
+    @Test(expected = PositionAlreadyFilledException.class)
+    public void ensurePlayersCannotPlayOnPlayedPosition() {
+        testGame.makeMark(0, 0);
+        testGame.makeMark(0, 0);
     }
 }

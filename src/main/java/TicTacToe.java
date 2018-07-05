@@ -9,7 +9,7 @@ public class TicTacToe {
         this.currentPlayer = "X";
     }
 
-    public String makeMark() {
+    public String makeMark(int row, int column) {
         String mark = currentPlayer;
         if (currentPlayer.equals("X")) {
             currentPlayer = "O";
