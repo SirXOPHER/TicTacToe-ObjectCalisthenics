@@ -3,8 +3,14 @@
  */
 public class TicTacToe {
 
+    private String currentPlayer;
+
+    public TicTacToe() {
+        this.currentPlayer = "X";
+    }
 
     public String makeMark() {
+        currentPlayer = "O";
         return "X";
     }
 }
