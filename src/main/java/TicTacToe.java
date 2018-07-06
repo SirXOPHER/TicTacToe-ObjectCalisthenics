@@ -53,6 +53,18 @@ public class TicTacToe {
                 (checkTriplet(grid[0][2], grid[1][1], grid[2][0])));
     }
 
+    public boolean isGridFull() {
+        boolean full = true;
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
+                if (grid[row][column] == null) {
+                    full = false;
+                }
+            }
+        }
+        return full;
+    }
+
     // TODO: Remove console printer before shipping production code
     public void printGridToConsole() {
         System.out.println("-------------");
