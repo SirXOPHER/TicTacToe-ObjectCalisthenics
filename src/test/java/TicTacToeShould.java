@@ -1,5 +1,8 @@
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -7,6 +10,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by xopher on 05/07/2018.
  */
+@RunWith(JUnitParamsRunner.class)
 public class TicTacToeShould {
 
     TicTacToe testGame;
@@ -53,5 +57,22 @@ public class TicTacToeShould {
         testGame.makeMark(1, 0);
         testGame.makeMark(2, 0);
         assertThat(testGame.checkColumn(), is(true));
+    }
+    
+    @Test
+    public void validateWinningDiagonal() throws PositionAlreadyFilledException {
+        testGame.makeMark(0, 0);
+        testGame.makeMark(1, 1);
+        testGame.makeMark(2, 2);
+        assertThat(testGame.checkDiagonal(), is(true));
+    }
+    
+    @Test
+    @Parameters({"0, 0", "0, 1", "0, 2",
+                 "1, 0", "1, 1", "1, 2",
+                 "2, 0", "2, 1", "2, 2"})
+    public void detectWhenGridIsFull(int row, int column) {
+        testGame.makeMark(row, column);
+        assertThat(testGame.isGridFull(), is(true));
     }
 }

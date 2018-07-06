@@ -48,6 +48,12 @@ public class TicTacToe {
         return false;
     }
 
+    public boolean checkDiagonal() {
+        return ((checkTriplet(grid[0][0], grid[1][1], grid[2][2])) ||
+                (checkTriplet(grid[0][2], grid[1][1], grid[2][0])));
+    }
+
+    // TODO: Remove console printer before shipping production code
     public void printGridToConsole() {
         System.out.println("-------------");
         for (int row = 0; row < 3; row++) {
